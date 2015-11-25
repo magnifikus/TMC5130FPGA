@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER TMCSPI_AXI
+	OPTION supported_peripherals = (TMCSPI_AXI);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = TMCSPI_AXI;
+END DRIVER
