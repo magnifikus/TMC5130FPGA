@@ -1,0 +1,27 @@
+net "clk" loc = "A8"			|  IOSTANDARD = LVCMOS33;
+#net "led<3>" loc = "a10"	|  IOSTANDARD = LVCMOS33;
+#net "led<2>" loc = "b5"		|  IOSTANDARD = LVCMOS33;
+#net "led<1>" loc = "a5"		|  IOSTANDARD = LVCMOS33;
+#net "led<0>" loc = "a12"	|  IOSTANDARD = LVCMOS33;
+#net "btn<0>" loc = "a9"		|  IOSTANDARD = LVCMOS33;
+#net "btn<1>" loc = "a7"		|  IOSTANDARD = LVCMOS33;
+
+net "sclk" loc = "N2" | IOSTANDARD = LVCMOS33;
+net "mosi" loc = "L3" | IOSTANDARD = LVCMOS33;
+net "miso" loc = "M1" | IOSTANDARD = LVCMOS33;
+net "csn" loc = "L2" | IOSTANDARD = LVCMOS33;
+net "ssclk" loc = "F4" | IOSTANDARD = LVCMOS33 | CLOCK_DEDICATED_ROUTE;
+net "smosi" loc = "J1" | IOSTANDARD = LVCMOS33;
+net "smiso" loc = "G1" | IOSTANDARD = LVCMOS33;
+net "scsn" loc = "H4" | IOSTANDARD = LVCMOS33;
+net "step0" loc = "G4" | IOSTANDARD = LVCMOS33;
+net "dir0" loc = "G2" | IOSTANDARD = LVCMOS33;
+net "enn0" loc = "D2" | IOSTANDARD = LVCMOS33;
+net "step1" loc = "E1" | IOSTANDARD = LVCMOS33;
+net "dir1" loc = "E3" | IOSTANDARD = LVCMOS33;
+net "enn1" loc = "F3" | IOSTANDARD = LVCMOS33;
+net "step2" loc = "C1" | IOSTANDARD = LVCMOS33;
+net "dir2" loc = "C2" | IOSTANDARD = LVCMOS33;
+net "enn2" loc = "B1" | IOSTANDARD = LVCMOS33;
+Net "clk" PERIOD = 16ns;
+Net "ssclk" PERIOD = 50ns;
