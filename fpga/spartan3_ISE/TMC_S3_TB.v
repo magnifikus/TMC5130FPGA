@@ -49,12 +49,30 @@ module TMC_S3_TB;
 	wire enn1;
 	wire enn2;
 	wire enn3;
+	wire led0;
+	wire led1;
+	wire led2;
+	wire led3;
+	wire dce0;
+	wire dci0;
+	wire dco0;
+	wire dce1;
+	wire dci1;
+	wire dco1;
+	wire dce2;
+	wire dci2;
+	wire dco2;
+	wire dce3;
+	wire dci3;
+	wire dco3;
+	
 
 	// Instantiate the Unit Under Test (UUT)
 	TMC_S3 uut (
-		.clk(clk), 
-		.resetn(resetn), 
+		.clk(clk),  
 		.sclk(sclk), 
+		.btn0(resetn),
+		.btn1(resetn),
 		.csn(csn), 
 		.mosi(mosi), 
 		.miso(miso), 
@@ -73,7 +91,23 @@ module TMC_S3_TB;
 		.enn0(enn0), 
 		.enn1(enn1), 
 		.enn2(enn2),
-		.enn3(enn3)
+		.enn3(enn3),
+		.led0(led0),
+		.led1(led1),
+		.led2(led2),
+		.led3(led3),
+		.dce0(dce0),
+		.dci0(dci0),
+		.dco0(dco0),
+		.dce1(dce1),
+		.dci1(dci1),
+		.dco1(dco1),
+		.dce2(dce2),
+		.dci2(dci2),
+		.dco2(dco2),
+		.dce3(dce3),
+		.dci3(dci3),
+		.dco3(dco3)
 	);
 	always begin
 		clk = 0;
@@ -92,8 +126,8 @@ module TMC_S3_TB;
 		smosi = 0;
 		#32;
 		resetn = 1;
-		#20000
-		
+		#20000;
+		/*
 		set_reg('h00,'h00000202);
 		set_reg('h05,'h00000202);
 		set_reg('h01,'h00000001);
@@ -112,7 +146,7 @@ module TMC_S3_TB;
       #50000
 		spi_xfer(1,'h01,recb); // cmd
 		spi_xfer(3,'hCA,recb);
-		spi_xfer(3,'h01,recb); // pw1
+		spi_xfer(3,'h00,recb); // pw1
 		spi_xfer(3,'h10,recb);
 		spi_xfer(3,'h02,recb); // pw2
 		spi_xfer(3,'h20,recb);
@@ -167,7 +201,7 @@ module TMC_S3_TB;
 		spi_xfer(2,'h00,recb); 
 		//pw1 pw2 pw3 pw4  io1 io2   pwm1 pwm3  crc8  24x0       32x0 
 		// Add stimulus here
-
+	*/
 	end
 	
 	 task set_reg;

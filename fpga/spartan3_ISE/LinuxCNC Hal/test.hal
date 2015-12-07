@@ -1,0 +1,44 @@
+# kinematics
+loadrt trivkins
+# trajectory planner
+loadrt tp
+# motion controller, get name and thread periods from ini file
+#loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AXES
+#loadrt [EMCMOT]EMCMOT base_period_nsec=[EMCMOT]BASE_PERIOD servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AXES
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AXES tp=tp kins=trivkins
+
+loadrt fnc
+
+addf fnc.read servo-thread
+addf motion-command-handler servo-thread
+addf motion-controller servo-thread
+addf fnc.update servo-thread
+addf fnc.write servo-thread
+
+setp fnc.axis.0.scale [AXIS_0]SCALE
+setp fnc.axis.0.maxaccel [AXIS_0]STEPGEN_MAXACCEL
+
+net xpos-cmd axis.0.motor-pos-cmd => fnc.axis.0.position-cmd
+net xpos-fb fnc.axis.0.position-fb => axis.0.motor-pos-fb
+
+setp fnc.axis.1.scale [AXIS_1]SCALE
+setp fnc.axis.1.maxaccel [AXIS_1]STEPGEN_MAXACCEL
+
+net ypos-cmd axis.1.motor-pos-cmd => fnc.axis.1.position-cmd
+net ypos-fb fnc.axis.1.position-fb => axis.1.motor-pos-fb
+
+setp fnc.axis.2.scale [AXIS_2]SCALE
+setp fnc.axis.2.maxaccel [AXIS_2]STEPGEN_MAXACCEL
+
+net zpos-cmd axis.2.motor-pos-cmd => fnc.axis.2.position-cmd
+net zpos-fb fnc.axis.2.position-fb => axis.2.motor-pos-fb
+
+
+net estop-out <= iocontrol.0.user-enable-out
+net estop-out => iocontrol.0.emc-enable-in
+#setp fnc.enable 1
+
+net estop-out => fnc.axis.0.enable 
+net estop-out => fnc.axis.1.enable 
+net estop-out => fnc.axis.2.enable
+

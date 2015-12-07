@@ -288,7 +288,7 @@ module tmcspi (clk, resetn,addr ,  we, din, dout, sclk, mosi,csn, miso);
                     if (p_chip == t_chip) begin   // target chip?
                         if (t_write == 1)
                             di_i <= {1'b1,t_reg[6:0],dout};
-                        else di_i <= {1'b0,t_reg[6:0],'h000000};
+                        else di_i <= {1'b0,t_reg[6:0],32'h000000};
                     end else di_i <= 'h00000000;  // nulls to chips we dont want to talk to
                     wren_i <= 1;
                     if (wr_ack_o == 1) begin  // clear latch and advance
