@@ -1,27 +1,84 @@
 net "clk" loc = "A8"			|  IOSTANDARD = LVCMOS33;
-#net "led<3>" loc = "a10"	|  IOSTANDARD = LVCMOS33;
-#net "led<2>" loc = "b5"		|  IOSTANDARD = LVCMOS33;
-#net "led<1>" loc = "a5"		|  IOSTANDARD = LVCMOS33;
-#net "led<0>" loc = "a12"	|  IOSTANDARD = LVCMOS33;
-#net "btn<0>" loc = "a9"		|  IOSTANDARD = LVCMOS33;
-#net "btn<1>" loc = "a7"		|  IOSTANDARD = LVCMOS33;
+net "led3" loc = "a10"	|  IOSTANDARD = LVCMOS33;
+net "led2" loc = "b5"		|  IOSTANDARD = LVCMOS33;
+net "led1" loc = "a5"		|  IOSTANDARD = LVCMOS33;
+net "led0" loc = "a12"	|  IOSTANDARD = LVCMOS33;
+net "btn0" loc = "a9"		|  IOSTANDARD = LVCMOS33;
+net "btn1" loc = "a7"		|  IOSTANDARD = LVCMOS33;
 
-net "sclk" loc = "N2" | IOSTANDARD = LVCMOS33;
-net "mosi" loc = "L3" | IOSTANDARD = LVCMOS33;
-net "miso" loc = "M1" | IOSTANDARD = LVCMOS33;
+net "sclk" loc = "M1" | IOSTANDARD = LVCMOS33;
+net "mosi" loc = "N2" | IOSTANDARD = LVCMOS33;
+net "miso" loc = "L3" | IOSTANDARD = LVCMOS33;
 net "csn" loc = "L2" | IOSTANDARD = LVCMOS33;
-net "ssclk" loc = "F4" | IOSTANDARD = LVCMOS33 | CLOCK_DEDICATED_ROUTE;
-net "smosi" loc = "J1" | IOSTANDARD = LVCMOS33;
-net "smiso" loc = "G1" | IOSTANDARD = LVCMOS33;
-net "scsn" loc = "H4" | IOSTANDARD = LVCMOS33;
-net "step0" loc = "G4" | IOSTANDARD = LVCMOS33;
-net "dir0" loc = "G2" | IOSTANDARD = LVCMOS33;
-net "enn0" loc = "D2" | IOSTANDARD = LVCMOS33;
-net "step1" loc = "E1" | IOSTANDARD = LVCMOS33;
-net "dir1" loc = "E3" | IOSTANDARD = LVCMOS33;
-net "enn1" loc = "F3" | IOSTANDARD = LVCMOS33;
-net "step2" loc = "C1" | IOSTANDARD = LVCMOS33;
-net "dir2" loc = "C2" | IOSTANDARD = LVCMOS33;
-net "enn2" loc = "B1" | IOSTANDARD = LVCMOS33;
+net "ssclk" loc = "P1" | IOSTANDARD = LVCMOS33 | CLOCK_DEDICATED_ROUTE;
+net "smosi" loc = "T3" | IOSTANDARD = LVCMOS33;
+net "smiso" loc = "T4" | IOSTANDARD = LVCMOS33;
+net "scsn" loc = "P2" | IOSTANDARD = LVCMOS33;
+
+
+net "enn0" loc = "N1" | IOSTANDARD = LVCMOS33;
+net "enn1" loc = "M2" | IOSTANDARD = LVCMOS33;
+net "enn2" loc = "M3" | IOSTANDARD = LVCMOS33;
+net "enn3" loc = "K3" | IOSTANDARD = LVCMOS33;
+
+net "step0" loc = "K2" | IOSTANDARD = LVCMOS33;
+net "step1" loc = "K1" | IOSTANDARD = LVCMOS33;
+net "step2" loc = "H1" | IOSTANDARD = LVCMOS33;
+net "step3" loc = "J2" | IOSTANDARD = LVCMOS33;
+
+net "dir0" loc = "H3" | IOSTANDARD = LVCMOS33;
+net "dir1" loc = "G3" | IOSTANDARD = LVCMOS33;
+net "dir2" loc = "J3" | IOSTANDARD = LVCMOS33;
+net "dir3" loc = "F2" | IOSTANDARD = LVCMOS33;
+
+net "dce0" loc = "E2" | IOSTANDARD = LVCMOS33;
+net "dce1" loc = "D3" | IOSTANDARD = LVCMOS33;
+net "dce2" loc = "D1" | IOSTANDARD = LVCMOS33;
+net "dce3" loc = "C3" | IOSTANDARD = LVCMOS33;
+net "dco0" loc = "F4" | IOSTANDARD = LVCMOS33;
+net "dco1" loc = "J1" | IOSTANDARD = LVCMOS33;
+net "dco2" loc = "G1" | IOSTANDARD = LVCMOS33;
+net "dco3" loc = "H4" | IOSTANDARD = LVCMOS33;
+net "dci0" loc = "G4" | IOSTANDARD = LVCMOS33;
+net "dci1" loc = "G2" | IOSTANDARD = LVCMOS33;
+net "dci2" loc = "D2" | IOSTANDARD = LVCMOS33;
+net "dci3" loc = "E3" | IOSTANDARD = LVCMOS33;
+
+
+net "gpo[0]" loc = "T9" | IOSTANDARD = LVCMOS33;
+net "gpo[1]" loc = "N15" | IOSTANDARD = LVCMOS33;
+net "gpo[2]" loc = "R10" | IOSTANDARD = LVCMOS33;
+net "gpo[3]" loc = "R11" | IOSTANDARD = LVCMOS33;
+net "gpo[4]" loc = "T12" | IOSTANDARD = LVCMOS33;
+net "gpo[5]" loc = "T14" | IOSTANDARD = LVCMOS33;
+net "gpo[6]" loc = "R16" | IOSTANDARD = LVCMOS33;
+net "gpo[7]" loc = "P15" | IOSTANDARD = LVCMOS33;
+net "gpo[8]" loc = "L15" | IOSTANDARD = LVCMOS33;
+net "gpo[9]" loc = "K15" | IOSTANDARD = LVCMOS33;
+net "gpo[10]" loc = "H16" | IOSTANDARD = LVCMOS33;
+net "gpo[11]" loc = "G16" | IOSTANDARD = LVCMOS33;
+net "gpo[12]" loc = "F15" | IOSTANDARD = LVCMOS33;
+net "gpo[13]" loc = "E15" | IOSTANDARD = LVCMOS33;
+net "gpo[14]" loc = "D15" | IOSTANDARD = LVCMOS33;
+net "gpo[15]" loc = "C15" | IOSTANDARD = LVCMOS33;
+net "gpi[0]" loc = "R9" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[1]" loc = "T10" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[2]" loc = "M15" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[3]" loc = "M16" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[4]" loc = "R12" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[5]" loc = "T13" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[6]" loc = "R13" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[7]" loc = "P16" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[8]" loc = "N16" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[9]" loc = "K16" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[10]" loc = "J16" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[11]" loc = "H15" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[12]" loc = "G15" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[13]" loc = "E16" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[14]" loc = "D16" | IOSTANDARD = LVCMOS33 | PULLUP;
+net "gpi[15]" loc = "C16" | IOSTANDARD = LVCMOS33 | PULLUP;
+
+
+
 Net "clk" PERIOD = 16ns;
 Net "ssclk" PERIOD = 50ns;
